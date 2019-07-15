@@ -1,0 +1,32 @@
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+</head>
+
+<body onload="getLocationUpdate()">
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDxE9wqGVNr3IUrDQyDK1qtG0C0sB0YqKQ",
+            authDomain: "potholes-sf.firebaseapp.com",
+            databaseURL: "https://potholes-sf.firebaseio.com",
+            projectId: "potholes-sf",
+            storageBucket: "potholes-sf.appspot.com",
+            messagingSenderId: "277599364088"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+
+        const settings = {
+            timestampsInSnapshots: true
+        };
+
+        db.settings(settings);
+    </script>
+    <script src='src/js/accelerometer.js'></script>
+
+    <div>
+        Potholes counted: <span id=potholeCounter></span>
+    </div>
+
+
+</body>
